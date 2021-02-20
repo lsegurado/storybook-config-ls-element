@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "module": "ES2020",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "allowUnreachableCode": false,
+        "declaration": true,
+        "allowJs": true,
+        "experimentalDecorators": true,
+        "lib": [
+            "dom",
+            "es2015"
+        ],
+        "outDir": "dist",
+        "target": "esnext",
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "jsx": "react",
+        "jsxFactory": "h.createElement",
+        "jsxFragmentFactory": "h.Fragment"
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

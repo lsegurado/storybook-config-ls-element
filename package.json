@@ -1,0 +1,44 @@
+{
+  "name": "@lsegurado/storybook-config-ls-element",
+  "license": "MIT",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lsegurado/storybook-config-ls-element.git"
+  },
+  "description": "Development server based on esBuild",
+  "files": [
+    "dist/",
+    "server.config.mjs"
+  ],
+  "baseUrl": "./src",
+  "scripts": {
+    "build": "tsc",
+    "link": "tsc && npm link --force && tsc -w",
+    "publish-patch-version": "npm version patch && npm run publish-npm",
+    "publish-npm": "npm run build && npm publish --access public",
+    "lint": "eslint --fix src/**/*{.ts,.tsx}"
+  },
+  "eslintConfig": {
+    "extends": "@lsegurado/eslint-config-ls-element"
+  },
+  "devDependencies": {
+    "@lsegurado/eslint-config-ls-element": "0.0.3",
+    "eslint": "^7.19.0",
+    "husky": "^4.3.8",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "@lsegurado/ls-element": "^1.2.6",
+    "@lsegurado/ls-server": "^0.0.15",
+    "@web/dev-server": "^0.1.8",
+    "@web/dev-server-esbuild": "^0.2.11",
+    "@web/dev-server-storybook": "^0.3.5",
+    "@web/storybook-prebuilt": "0.1.20"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  }
+}
